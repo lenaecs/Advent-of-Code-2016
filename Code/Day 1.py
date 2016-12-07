@@ -1,10 +1,8 @@
-advent = open('C:\Users\lenae\Dropbox\Advent of Code\December 2016\Input\Day 1.txt')
+advent = open('C:\Users\lenae.stoner\Dropbox\Advent-of-Code-2016\Input\Day 1.txt')
 
 input = []
 for line in advent:
     input = line
-
-
 
 def navigate(dir):
     dir = dir.split(', ')
@@ -17,50 +15,28 @@ def navigate(dir):
             orientation = (orientation + 1)%4
         else:
             orientation =  (orientation - 1)%4
+
         if orientation == 0:
-            for i in range(int(i[1:])):
-                loc[0] += 1
-                visited.append(str(loc[0]) + str(loc[1]))
-                if len(set(visited)) == len(visited) and bunny == False:
-                    pass
-                elif bunny == True:
-                    pass
-                elif len(set(visited)) != len(visited):
-                    bunny = True
-                    print "bunny at " + str(abs(loc[0]) + abs(loc[1]))
+            velocity = (0,1)
         elif orientation == 1:
-            for i in range(int(i[1:])):
-                loc[1] += 1
-                visited.append(str(loc[0]) + str(loc[1]))
-                if len(set(visited)) == len(visited) and bunny == False:
-                    pass
-                elif bunny == True:
-                    pass
-                elif len(set(visited)) != len(visited):
-                    bunny = True
-                    print "bunny at " + str(abs(loc[0]) + abs(loc[1]))
+            velocity = (1,0)
         elif orientation == 2:
-            for i in range(int(i[1:])):
-                loc[0] -= 1
-                visited.append(str(loc[0]) + str(loc[1]))
-                if len(set(visited)) == len(visited) and bunny == False:
-                    pass
-                elif bunny == True:
-                    pass
-                elif len(set(visited)) != len(visited):
-                    bunny = True
-                    print "bunny at " + str(abs(loc[0]) + abs(loc[1]))
+            velocity = (0,-1)
         else:
-            for i in range(int(i[1:])):
-                loc[1] -= 1
-                visited.append(str(loc[0]) + str(loc[1]))
-                if len(set(visited)) == len(visited) and bunny == False:
-                    pass
-                elif bunny == True:
-                    pass
-                elif len(set(visited)) != len(visited):
-                    bunny = True
-                    print "bunny at " + str(abs(loc[0]) + abs(loc[1]))
+            velocity = (-1,0)
+
+        for i in range(int(i[1:])):
+            loc[0] += velocity[0]
+            loc[1] += velocity[1]
+            visited.append(str(loc[0]) + str(loc[1]))
+            #print visited
+            if len(set(visited)) == len(visited) and bunny == False:
+                pass
+            elif bunny == True:
+                pass
+            elif len(set(visited)) != len(visited):
+                bunny = True
+                print "bunny at " + str(abs(loc[0]) + abs(loc[1]))
     print abs(loc[0]) + abs(loc[1])
 
 navigate('R2, L3')
