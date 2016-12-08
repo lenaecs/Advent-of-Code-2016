@@ -15,7 +15,6 @@ def navigate(dir):
             orientation = (orientation + 1)%4
         else:
             orientation =  (orientation - 1)%4
-
         if orientation == 0:
             velocity = (0,1)
         elif orientation == 1:
@@ -24,7 +23,6 @@ def navigate(dir):
             velocity = (0,-1)
         else:
             velocity = (-1,0)
-
         for i in range(int(i[1:])):
             loc[0] += velocity[0]
             loc[1] += velocity[1]
