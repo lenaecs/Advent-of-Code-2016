@@ -1,4 +1,4 @@
-f = open('C:\Users\lenae.stoner\Dropbox\Advent-of-Code-2016\Input\Day 8.txt')
+f = open('C:\\Users\lenae.stoner\Dropbox\Advent-of-Code-2016\Input\Day 8.txt')
 
 puzzle = []
 for line in f:
